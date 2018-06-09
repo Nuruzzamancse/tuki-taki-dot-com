@@ -1,0 +1,197 @@
+<app-navbar></app-navbar>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<form (submit)="onRegisterSubmit()" class="form-horizontal">
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend style="text-align: center">Register Yourself</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="fname">First Name</label>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="name" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="lname">User Name</label>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="username" name="last_name" id="last_name" class="form-control input-sm" placeholder="User Name">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="email">Email</label>
+      <div class="col-md-4">
+        <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+
+      </div>
+    </div>
+
+    <!-- Password input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="password">Password</label>
+      <div class="col-md-4">
+        <input type="password" [(ngModel)]="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="password">Confirm Password</label>
+      <div class="col-md-4">
+        <input type="password"  name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+
+      </div>
+    </div>
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="save"></label>
+      <div class="col-md-8">
+        <button id="save" name="save" class="btn btn-success">Register</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">-->
+  <!--<div class="row centered-form">-->
+    <!--<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">-->
+      <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+          <!--<h3 class="panel-title">Register <small>It's free!</small></h3>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+          <!--<form (submit)="onRegisterSubmit()" role="form">-->
+            <!--<div class="row">-->
+              <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                <!--<div class="form-group">-->
+                  <!--<input type="text" [(ngModel)]="name" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                <!--<div class="form-group">-->
+                  <!--<input type="text" [(ngModel)]="username" name="last_name" id="last_name" class="form-control input-sm" placeholder="User Name">-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+              <!--<input type="email" [(ngModel)]="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+              <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                <!--<div class="form-group">-->
+                  <!--<input type="password" [(ngModel)]="password" name="password" id="password" class="form-control input-sm" placeholder="Password">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                <!--<div class="form-group">-->
+                  <!--<input type="password"  name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<input type="submit" value="Register" class="btn btn-info btn-block">-->
+
+          <!--</form>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h2 class="page-header">Register</h2>-->
+
+<!--<form (submit)="onRegisterSubmit()" >-->
+
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">Name</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="text" [(ngModel)]="name" name="name" class="form-control">-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">Email</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="text" [(ngModel)]="email" name="email" class="form-control">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+    <!--&lt;!&ndash;<label>Email</label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngModel)]="email" name="email" class="form-control">&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">UserName</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="text" [(ngModel)]="username" name="username" class="form-control">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+    <!--&lt;!&ndash;<label>UserName</label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngModel)]="username" name="username" class="form-control">&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">Password</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="password" [(ngModel)]="password" name="email" class="form-control">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--&lt;!&ndash;<input type="submit" class="btn btn-primary">&ndash;&gt;-->
+  <!--<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>-->
+
+
+<!--</form>-->

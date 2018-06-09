@@ -1,0 +1,51 @@
+
+  <form style="height: 400px" #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
+    <div class="form-row">
+      <label for="card-info">Card Info</label>
+      <div id="card-info" #cardInfo></div>
+
+      <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+    </div>
+
+    <div class="form-row">
+      <br>
+      <label for="card-info">Name:</label>
+      <input type="email" [(ngModel)]="name" name="name" id="name" class="form-control input-sm" placeholder="Email Address">
+
+    </div>
+
+    <div class="form-row">
+      <br>
+      <label for="card-info">Phone:</label>
+      <input type="email" [(ngModel)]="phone" name="phone" id="phone" class="form-control input-sm" placeholder="Enter Your Phone No">
+
+    </div>
+
+    <div class="form-row">
+      <br>
+      <label for="card-info">Delivery Address:</label>
+      <input type="email" [(ngModel)]="deliveryAddress" name="deliveryAddress" id="deliveryAddress" class="form-control input-sm" placeholder="Enter Your Delivery Address">
+
+    </div>
+
+    <div class="form-row">
+      <br>
+      <label for="card-info">Email Address:</label>
+      <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+
+    </div>
+
+    <button type="submit" (click)="shop()"><span style="font-size: medium">Pay ${{sum}}</span></button>
+
+    <div *ngIf="name">
+      <h3>Your Information</h3>
+      <h4>Name: <span style="text-align: right;color: #74DF00">{{name}}</span></h4>
+      <h4 *ngIf="phone">Phone:<span style="text-align: right;color: #74DF00">{{phone}}</span></h4>
+      <h4 *ngIf="deliveryAddress">Delivery Address:<span style="text-align: right;color: #74DF00">{{deliveryAddress}}</span></h4>
+      <h4 *ngIf="deliveryAddress">Email Address:<span style="text-align: right;color: #74DF00">{{email}}</span></h4>
+
+    </div>
+
+  </form>
+
+

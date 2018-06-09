@@ -1,0 +1,134 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><i class="fab fa-rendact"></i></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a  [routerLink]="['/']">Home</a></li>
+      <!--<li><a href="#">Page 2</a></li>-->
+
+
+
+
+      <form  class="navbar-form navbar-right" action="/action_page.php">
+        <div class="input-group">
+          <!--<input type="text" class="form-control" placeholder="Search" name="search">-->
+          <input type="text" class="form-control" placeholder="Search" name="search" (keyup)="searchTerm$.next($event.target.value)">
+
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+      <!--<li style="height: 35px">-->
+      <!--<mat-form-field  (onSelect)="onChangeOption($event)">-->
+      <!--<input style="background-color: white;height: 32px;border-radius: 3px" type="text" placeholder="Search" aria-label="Number" matInput [(ngModel)]="value" [formControl]="myControl" [matAutocomplete]="auto">-->
+      <!--<mat-autocomplete #auto="matAutocomplete">-->
+      <!--<mat-option *ngFor="let option of filteredOptions | async" [value]="option">-->
+      <!--{{ option }}-->
+      <!--</mat-option>-->
+      <!--</mat-autocomplete>-->
+      <!--</mat-form-field>-->
+      <!--<button style="margin-bottom: 15px" class="btn btn-primary" (click)="onChangeOption($event)">Search</button>-->
+      <!--</li>-->
+
+
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <li *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/profile']"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+
+
+      <li *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><span class="glyphicon glyphicon-plus-sign"></span>Add Product</a></li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/cart']"><i class="glyphicon glyphicon-shopping-cart"></i>
+
+        <span class="badge">{{productService.getProductCartSize()||bad}}</span>
+
+      </a></li>
+
+
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/register']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li  *ngIf="authService.loggedIn()" ><a (click)="onLogoutClick()"  href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<div *ngIf="!results" class="row">
+    <div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">
+
+      <div  class="thumbnail">
+        <h3 style="float: left">{{product.code}}</h3>
+
+        <!--<h1 style="color: blue">Asadul</h1>-->
+
+        <button (click)="delFunc(product)" *ngIf="isAdmin" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-trash"></span> Trash
+        </button>
+
+        <button *ngIf="isAdmin" (click)="editProduct(product._id)" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-sm">
+          <span class="glyphicon glyphicon-edit"></span> Edit
+        </button>
+
+
+        <h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>
+
+        <img (click)="detailsView(product._id)" src="http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}" alt="..." class="img-responsive">
+        <div class="caption">
+          <p class="description">{{ product.description }}</p>
+          <div class="clearfix">
+            <div class="price pull-left">${{ product.price }}</div>
+
+
+            <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div *ngIf="results" class="row">
+  <div *ngFor="let product of results;let i = index" class="col-sm-6 col-md-4">
+
+    <div  class="thumbnail">
+      <h3 style="float: left">{{product.code}}</h3>
+
+      <!--<h1 style="color: blue">Asadul</h1>-->
+
+      <button (click)="delFunc(product)" *ngIf="isAdmin" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-sm">
+        <span class="glyphicon glyphicon-trash"></span> Trash
+      </button>
+
+      <button *ngIf="isAdmin" (click)="editProduct(product._id)" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-edit"></span> Edit
+      </button>
+
+
+      <h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>
+
+      <img (click)="detailsView(product._id)" src="http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}" alt="..." class="img-responsive">
+      <div class="caption">
+        <p class="description">{{ product.description }}</p>
+        <div class="clearfix">
+          <div class="price pull-left">${{ product.price }}</div>
+
+
+          <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

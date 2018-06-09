@@ -82,7 +82,7 @@
 
         <h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>
 
-        <img (click)="detailsView(product._id)" src="http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}" alt="..." class="img-responsive">
+        <img (click)="detailsView(product._id)" src="http://tuki-taki.cleverapps.io/{{product.picture[0]}}" alt="..." class="img-responsive">
         <div class="caption">
           <p class="description">{{ product.description.length>40?   (product.description | slice:0:20 )+'.....': (product.description)}}
 

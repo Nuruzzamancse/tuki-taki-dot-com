@@ -84,12 +84,18 @@
 
         <img (click)="detailsView(product._id)" src="http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}" alt="..." class="img-responsive">
         <div class="caption">
-          <p class="description">{{ product.description }}</p>
+          <p class="description">{{ product.description.length>40?   (product.description | slice:0:20 )+'.....': (product.description)}}
+
+
+            <a  (click)="detailsView(product._id)" style="cursor:pointer;" *ngIf="product.description.length>40">More</a>
+
+
+          </p>
           <div class="clearfix">
             <div class="price pull-left">${{ product.price }}</div>
 
 
-            <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+            <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button"><i class="glyphicon glyphicon-shopping-cart"></i>Add</a>
           </div>
         </div>
       </div>

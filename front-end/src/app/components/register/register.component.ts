@@ -3,6 +3,7 @@ import { ValidateService} from "../../services/validate.service";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { AuthService} from "../../services/auth.service";
 import { Router} from "@angular/router";
+import { ToasterServiceService} from "../../services/toaster.service";
 
 @Component({
   selector: 'app-register',
@@ -23,7 +24,8 @@ export class RegisterComponent implements OnInit {
               private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,
               private authService: AuthService,
-              private router: Router
+              private router: Router,
+              private toasterService: ToasterServiceService
   ) { }
 
   ngOnInit() {
@@ -44,8 +46,9 @@ export class RegisterComponent implements OnInit {
     if(!this.validateService.validateRegister(user)){
       // this.flashMessages.show('Please fill in all fields',{cssClass: 'alert-danger',timeout:300});
       // this.flashMessage.warning('Please fill in all fields',{delay:2000});
-      this._flashMessagesService.show('Please fill in all fields!', { cssClass: 'alert-danger' } );
+      // this._flashMessagesService.show('Please fill in all fields!', { cssClass: 'alert-danger' } );
 
+      this.toasterService.Warning("Please fill in all fields");
       return false;
     }
 
@@ -53,18 +56,21 @@ export class RegisterComponent implements OnInit {
     if(!this.validateService.validateEmail(user.email)){
       // this.flashMessages.show('Please use a valid email',{cssClass: 'alert-danger',timeout:300});
 
-      this._flashMessagesService.show('Please use valid Email!', { cssClass: 'alert-danger' } );
+      // this._flashMessagesService.show('Please use valid Email!', { cssClass: 'alert-danger' } );
+      this.toasterService.Warning("Please use valid Email!");
       return false;
     }
 
     this.authService.registerUser(user)
       .subscribe( data =>{
         if(data.success) {
-          this._flashMessagesService.show('You are now Registered.', {cssClass: 'alert-success'});
+          // this._flashMessagesService.show('You are now Registered.', {cssClass: 'alert-success'});
+          this.toasterService.Info("You are now Registered.");
           this.router.navigate(['/login']);
         }
         else {
-          this._flashMessagesService.show('Something went wrong', { cssClass: 'alert-danger'});
+          // this._flashMessagesService.show('Something went wrong', { cssClass: 'alert-danger'});
+          this.toasterService.Error("Something went wrong please try again!");
           this.router.navigate(['/register']);
         }
       })

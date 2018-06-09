@@ -24,7 +24,7 @@ export class ProductService {
 
     headers.append('Content-type','application/json');
 
-    return this.http.post('/product',product,{headers: headers})
+    return this.http.post(`${environment.baseUrl}/product`,product,{headers: headers})
       .map(res => res.json())
 
   }

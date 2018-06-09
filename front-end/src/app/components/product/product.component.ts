@@ -73,10 +73,15 @@ export class ProductComponent implements OnInit {
         this.router.navigate([`/photo/${id}`]);
       }
       else {
+        console.log('Error In product');
         this.router.navigate(['/product']);
       }
     })
 
+  }
+
+  handleCategory(){
+    this.router.navigate(['category'])
   }
 
 }

@@ -44,6 +44,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AutocompleteFilterExampleComponent } from './components/autocomplete-filter-example/autocomplete-filter-example.component';
 import { ToasterServiceService} from "./services/toaster.service";
 import {SearchService} from "./services/search-service.service";
+import { CategoryComponent } from './components/category/category.component';
+import {CategoryService} from "./services/category.service";
 
 
 @NgModule({
@@ -63,7 +65,8 @@ import {SearchService} from "./services/search-service.service";
     EditproductComponent,
     EditprofileComponent,
     AddressComponent,
-    AutocompleteFilterExampleComponent
+    AutocompleteFilterExampleComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ import {SearchService} from "./services/search-service.service";
     AdminGaurd,
     StripeService,
     ToasterServiceService,
-    SearchService
+    SearchService,
+    CategoryService
 
 
   ],

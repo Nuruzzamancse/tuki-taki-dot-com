@@ -4,6 +4,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
 import {ProductService} from "../../services/product.service";
 import { ToasterServiceService} from "../../services/toaster.service";
+import { Location} from "@angular/common";
 
 
 @Component({
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private router: Router,
     private productService: ProductService,
-    private toasterService: ToasterServiceService
+    private toasterService: ToasterServiceService,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -52,18 +54,12 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('isAdmin',res.data.isAdmin);
         localStorage.setItem('loginId',res.data._id);
 
-
-
         this.authService.storeUserDatta(res.token, res.data);
 
 
-        // this.flashMessage.show('You are now Logged In!', { cssClass: 'alert-success' } );
+        // this.location.back();
 
-        console.log('Here lgoin');
-
-        // this.toasterService.Success("Successfully logged in!");
         this.toasterService.Success("Successfully Logged in!!");
-
 
         this.router.navigate(['/']);
       }

@@ -39,12 +39,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_editproduct_editproduct_component__ = __webpack_require__("./src/app/components/editproduct/editproduct.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_editprofile_editprofile_component__ = __webpack_require__("./src/app/components/editprofile/editprofile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_autocomplete_filter_example_autocomplete_filter_example_component__ = __webpack_require__("./src/app/components/autocomplete-filter-example/autocomplete-filter-example.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_category_category_component__ = __webpack_require__("./src/app/components/category/category.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -75,7 +77,8 @@ var routes = [
     { path: 'checkout', component: __WEBPACK_IMPORTED_MODULE_13__components_checkout_checkout_component__["a" /* CheckoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__gaurds_auth_gaurd__["a" /* AuthGaurd */]] },
     { path: 'edit/:id', component: __WEBPACK_IMPORTED_MODULE_14__components_editproduct_editproduct_component__["a" /* EditproductComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__gaurds_admin_gaurd__["a" /* AdminGaurd */]] },
     { path: 'editprofile/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_editprofile_editprofile_component__["a" /* EditprofileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__gaurds_auth_gaurd__["a" /* AuthGaurd */]] },
-    { path: 'auto', component: __WEBPACK_IMPORTED_MODULE_16__components_autocomplete_filter_example_autocomplete_filter_example_component__["a" /* AutocompleteFilterExampleComponent */] }
+    { path: 'auto', component: __WEBPACK_IMPORTED_MODULE_16__components_autocomplete_filter_example_autocomplete_filter_example_component__["a" /* AutocompleteFilterExampleComponent */] },
+    { path: 'category', component: __WEBPACK_IMPORTED_MODULE_17__components_category_category_component__["a" /* CategoryComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -181,12 +184,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_autocomplete_filter_example_autocomplete_filter_example_component__ = __webpack_require__("./src/app/components/autocomplete-filter-example/autocomplete-filter-example.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_toaster_service__ = __webpack_require__("./src/app/services/toaster.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__services_search_service_service__ = __webpack_require__("./src/app/services/search-service.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_category_category_component__ = __webpack_require__("./src/app/components/category/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_category_service__ = __webpack_require__("./src/app/services/category.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -247,7 +254,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_27__components_editproduct_editproduct_component__["a" /* EditproductComponent */],
                 __WEBPACK_IMPORTED_MODULE_29__components_editprofile_editprofile_component__["a" /* EditprofileComponent */],
                 __WEBPACK_IMPORTED_MODULE_30__components_address_address_component__["a" /* AddressComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__components_autocomplete_filter_example_autocomplete_filter_example_component__["a" /* AutocompleteFilterExampleComponent */]
+                __WEBPACK_IMPORTED_MODULE_33__components_autocomplete_filter_example_autocomplete_filter_example_component__["a" /* AutocompleteFilterExampleComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__components_category_category_component__["a" /* CategoryComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -275,7 +283,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_24__gaurds_admin_gaurd__["a" /* AdminGaurd */],
                 __WEBPACK_IMPORTED_MODULE_28__common_stripe_service__["a" /* StripeService */],
                 __WEBPACK_IMPORTED_MODULE_34__services_toaster_service__["a" /* ToasterServiceService */],
-                __WEBPACK_IMPORTED_MODULE_35__services_search_service_service__["a" /* SearchService */]
+                __WEBPACK_IMPORTED_MODULE_35__services_search_service_service__["a" /* SearchService */],
+                __WEBPACK_IMPORTED_MODULE_37__services_category_service__["a" /* CategoryService */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
         })
@@ -596,6 +605,118 @@ var CartComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], CartComponent);
     return CartComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/category/category.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/category/category.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-navbar></app-navbar>\n\n<div class=\"container\">\n<div class=\"\">\n\n\n    <!--view category-->\n    <table  class=\"table\">\n      <thead>\n      <tr style=\"font-size: 135%\">\n        <th style=\"text-align: center\">Name</th>\n        <th style=\"text-align: center\">Action</th>\n      </tr>\n      </thead>\n\n      <tbody *ngFor=\"let cat of Category;let i = index\">\n      <tr>\n        <td style=\"text-align: center; font-size: 130%\">{{cat.category}}</td>\n        <td style=\"text-align: center\"><a (click)=\"deleteCategory(cat)\" class=\"btn btn-sm btn-danger a-btn-slide-text\">\n          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n          <span><strong>Delete</strong></span>\n        </a></td>\n      </tr>\n\n      </tbody>\n      <tr>\n        <td class=\"text-center\">\n          <div class=\"input-group\">\n            <span class=\"input-group-addon\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></span>\n            <input type=\"text\" [(ngModel)]=\"input_category\" class=\"form-control\" name=\"category\" id=\"input_category\"  placeholder=\"Add a category name\"/>\n          </div>\n        </td>\n        <td class=\"text-center\">\n          <a (click)=\"addCategory()\" class=\"btn btn-sm btn-success a-btn-slide-text\">\n            <span><strong>Add Category</strong></span>\n          </a>\n        </td>\n      </tr>\n    </table>\n\n    <!--&lt;!&ndash;add category&ndash;&gt;-->\n    <!--<div class=\"form-group row\">-->\n      <!--<div class=\"col-md-4 col-sm-4 col-xs-4\">-->\n        <!--<div class=\"input-group\">-->\n          <!--<span class=\"input-group-addon\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></span>-->\n          <!--<input type=\"text\" [(ngModel)]=\"input_category\" class=\"form-control\" name=\"category\" id=\"input_category\"  placeholder=\"Add a category name\"/>-->\n        <!--</div>-->\n      <!--</div>-->\n      <!--<a (click)=\"addCategory()\" class=\"btn btn-sm btn-success a-btn-slide-text\">-->\n        <!--<span><strong>Add Category</strong></span>-->\n      <!--</a>-->\n    <!--</div>-->\n\n</div>\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/category/category.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_category_service__ = __webpack_require__("./src/app/services/category.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__ = __webpack_require__("./src/app/services/toaster.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var CategoryComponent = /** @class */ (function () {
+    function CategoryComponent(catService, _flashMessagesService, router, location, toasterService) {
+        this.catService = catService;
+        this._flashMessagesService = _flashMessagesService;
+        this.router = router;
+        this.location = location;
+        this.toasterService = toasterService;
+    }
+    CategoryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.catService.getCategory()
+            .subscribe(function (res) {
+            // console.log(res);
+            _this.Category = res.data;
+        });
+    };
+    CategoryComponent.prototype.deleteCategory = function (category) {
+        // console.log(category._id);
+        this.Category.splice(this.Category.indexOf(category), 1);
+        this.catService.deleteCategory(category._id)
+            .subscribe(function (res) {
+            console.log(res);
+        });
+    };
+    CategoryComponent.prototype.addCategory = function () {
+        var _this = this;
+        if (!this.input_category) {
+            // this._flashMessagesService.show('Please input a category name!',{ cssClass: 'alert-danger'});
+            this.toasterService.Warning("Please input a category name!");
+            return false;
+        }
+        var data = {
+            category: this.input_category
+        };
+        // console.log('in add category typescript');
+        this.catService.addCategory(data)
+            .subscribe(function (res) {
+            if (res.success) {
+                // this._flashMessagesService.show('Category added', { cssClass: 'alert-success'});
+                _this.toasterService.Info("Category added successfully!!");
+                _this.redirectTo('category');
+            }
+            else {
+                // this._flashMessagesService.show('Something is worng! Please try again!', { cssClass: 'alert-danger'});
+                _this.toasterService.Error("Something is worng! Please try again!");
+                _this.router.navigate(['/category']);
+            }
+        });
+    };
+    CategoryComponent.prototype.redirectTo = function (uri) {
+        this.location.back();
+    };
+    CategoryComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-category',
+            template: __webpack_require__("./src/app/components/category/category.component.html"),
+            styles: [__webpack_require__("./src/app/components/category/category.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_category_service__["a" /* CategoryService */],
+            __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"],
+            __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__["a" /* ToasterServiceService */]])
+    ], CategoryComponent);
+    return CategoryComponent;
 }());
 
 
@@ -1157,7 +1278,7 @@ module.exports = ""
 /***/ "./src/app/components/editprofile/editprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"row centered-form\">\r\n    <div class=\"col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4\">\r\n      <div class=\"panel panel-default\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Register <small>It's free!</small></h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <form *ngIf=\"user\" (submit)=\"onUpdate(user)\" role=\"form\">\r\n            <div class=\"row\">\r\n              <div class=\"col-xs-6 col-sm-6 col-md-6\">\r\n                <div class=\"form-group\">\r\n                  <input type=\"text\" [(ngModel)]=\"user.name\" name=\"first_name\" id=\"first_name\" class=\"form-control input-sm\" placeholder=\"First Name\">\r\n                </div>\r\n              </div>\r\n              <div class=\"col-xs-6 col-sm-6 col-md-6\">\r\n                <div class=\"form-group\">\r\n                  <input type=\"text\" [(ngModel)]=\"user.username\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" placeholder=\"User Name\">\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <input type=\"email\" [(ngModel)]=\"user.email\" name=\"email\" id=\"email\" class=\"form-control input-sm\" placeholder=\"Email Address\">\r\n            </div>\r\n\r\n            <!--<div class=\"row\">-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"text\" [(ngModel)]=\"user.password\" name=\"password\" id=\"password\" class=\"form-control input-sm\" placeholder=\"Password\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"password\"  name=\"password_confirmation\" id=\"password_confirmation\" class=\"form-control input-sm\" placeholder=\"Confirm Password\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <input type=\"submit\" value=\"Register\" class=\"btn btn-info btn-block\">\r\n\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<app-navbar></app-navbar>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"\">\r\n    <div class=\"\">\r\n      <div class=\"panel panel-default\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Edit  Your Profile</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <form *ngIf=\"user\" (submit)=\"onUpdate(user)\" role=\"form\">\r\n\r\n\r\n                <div class=\"form-group\">\r\n                  <label>Name:</label>\r\n                  <input type=\"text\" [(ngModel)]=\"user.name\" name=\"first_name\" id=\"first_name\" class=\"form-control input-sm\" placeholder=\"First Name\">\r\n                </div>\r\n\r\n\r\n                <div class=\"form-group\">\r\n                  <label>User Name:</label>\r\n                  <input type=\"text\" [(ngModel)]=\"user.username\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" placeholder=\"User Name\">\r\n                </div>\r\n\r\n\r\n\r\n            <div class=\"form-group\">\r\n              <label>Email:</label>\r\n              <input type=\"email\" [(ngModel)]=\"user.email\" name=\"email\" id=\"email\" class=\"form-control input-sm\" placeholder=\"Email Address\">\r\n            </div>\r\n\r\n\r\n\r\n            <input type=\"submit\" value=\"Update\" class=\"btn btn-info btn-block\">\r\n\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1251,14 +1372,14 @@ var EditprofileComponent = /** @class */ (function () {
 /***/ "./src/app/components/home/home.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n.card {\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  width: 300px;\r\n  margin-left: 40px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 12px;\r\n  overflow-x: hidden;\r\n\r\n}\r\n\r\n.thumbnail img {\r\n  height: 160px;\r\n  width: 300px;\r\n\r\n}\r\n\r\n.thumbnail .description {\r\n  color: #7f7f7f;\r\n}\r\n\r\n.price {\r\n  font-weight: bold;\r\n  font-size: 16px;\r\n}\r\n\r\n\r\n\r\n"
+module.exports = "\r\n.card {\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  width: 300px;\r\n  margin-left: 40px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 12px;\r\n  overflow-x: hidden;\r\n\r\n}\r\n\r\n.thumbnail img {\r\n  height: 160px;\r\n  width: 300px;\r\n\r\n}\r\n\r\n.thumbnail .description {\r\n  color: #7f7f7f;\r\n}\r\n\r\n.price {\r\n  font-weight: bold;\r\n  font-size: 16px;\r\n}\r\n\r\n.btn-container{\r\n  margin: auto;\r\n  height:44px;\r\n  width:166.23px;\r\n\r\n}\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\"><i class=\"fab fa-rendact\"></i></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a  [routerLink]=\"['/']\">Home</a></li>\r\n      <!--<li><a href=\"#\">Page 2</a></li>-->\r\n\r\n\r\n\r\n\r\n      <form  class=\"navbar-form navbar-right\" action=\"/action_page.php\">\r\n        <div class=\"input-group\">\r\n          <!--<input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search\">-->\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search\" (keyup)=\"searchTerm$.next($event.target.value)\">\r\n\r\n          <div class=\"input-group-btn\">\r\n            <button class=\"btn btn-default\" type=\"submit\">\r\n              <i class=\"glyphicon glyphicon-search\"></i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n\r\n      </form>\r\n\r\n      <!--<li style=\"height: 35px\">-->\r\n      <!--<mat-form-field  (onSelect)=\"onChangeOption($event)\">-->\r\n      <!--<input style=\"background-color: white;height: 32px;border-radius: 3px\" type=\"text\" placeholder=\"Search\" aria-label=\"Number\" matInput [(ngModel)]=\"value\" [formControl]=\"myControl\" [matAutocomplete]=\"auto\">-->\r\n      <!--<mat-autocomplete #auto=\"matAutocomplete\">-->\r\n      <!--<mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">-->\r\n      <!--{{ option }}-->\r\n      <!--</mat-option>-->\r\n      <!--</mat-autocomplete>-->\r\n      <!--</mat-form-field>-->\r\n      <!--<button style=\"margin-bottom: 15px\" class=\"btn btn-primary\" (click)=\"onChangeOption($event)\">Search</button>-->\r\n      <!--</li>-->\r\n\r\n\r\n    </ul>\r\n\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n\r\n      <li *ngIf=\"isAdmin\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/dashboard']\"><span class=\"glyphicon glyphicon-user\"></span> Dashboard</a></li>\r\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/profile']\"><span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\r\n\r\n\r\n      <li *ngIf=\"isAdmin\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/product']\"><span class=\"glyphicon glyphicon-plus-sign\"></span>Add Product</a></li>\r\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/cart']\"><i class=\"glyphicon glyphicon-shopping-cart\"></i>\r\n\r\n        <span class=\"badge\">{{productService.getProductCartSize()||bad}}</span>\r\n\r\n      </a></li>\r\n\r\n\r\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/register']\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/login']\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\r\n      <li  *ngIf=\"authService.loggedIn()\" ><a (click)=\"onLogoutClick()\"  href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Logout</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<div *ngIf=\"!results\" class=\"row\">\r\n    <div *ngFor=\"let product of products;let i = index\" class=\"col-sm-6 col-md-4\">\r\n\r\n      <div  class=\"thumbnail\">\r\n        <h3 style=\"float: left\">{{product.code}}</h3>\r\n\r\n        <!--<h1 style=\"color: blue\">Asadul</h1>-->\r\n\r\n        <button (click)=\"delFunc(product)\" *ngIf=\"isAdmin\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-danger btn-sm\">\r\n          <span class=\"glyphicon glyphicon-trash\"></span> Trash\r\n        </button>\r\n\r\n        <button *ngIf=\"isAdmin\" (click)=\"editProduct(product._id)\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-primary btn-sm\">\r\n          <span class=\"glyphicon glyphicon-edit\"></span> Edit\r\n        </button>\r\n\r\n\r\n        <h3 (click)=\"detailsView(product._id)\" style=\"color: deepskyblue;text-align: center\">{{product.name}}</h3>\r\n\r\n        <img (click)=\"detailsView(product._id)\" src=\"http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}\" alt=\"...\" class=\"img-responsive\">\r\n        <div class=\"caption\">\r\n          <p class=\"description\">{{ product.description }}</p>\r\n          <div class=\"clearfix\">\r\n            <div class=\"price pull-left\">${{ product.price }}</div>\r\n\r\n\r\n            <a (click)=\"cart(1,product._id,product)\" class=\"btn btn-success pull-right\" role=\"button\">Add to Shopping Cart</a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n<div *ngIf=\"results\" class=\"row\">\r\n  <div *ngFor=\"let product of results;let i = index\" class=\"col-sm-6 col-md-4\">\r\n\r\n    <div  class=\"thumbnail\">\r\n      <h3 style=\"float: left\">{{product.code}}</h3>\r\n\r\n      <!--<h1 style=\"color: blue\">Asadul</h1>-->\r\n\r\n      <button (click)=\"delFunc(product)\" *ngIf=\"isAdmin\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-danger btn-sm\">\r\n        <span class=\"glyphicon glyphicon-trash\"></span> Trash\r\n      </button>\r\n\r\n      <button *ngIf=\"isAdmin\" (click)=\"editProduct(product._id)\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-primary btn-sm\">\r\n        <span class=\"glyphicon glyphicon-edit\"></span> Edit\r\n      </button>\r\n\r\n\r\n      <h3 (click)=\"detailsView(product._id)\" style=\"color: deepskyblue;text-align: center\">{{product.name}}</h3>\r\n\r\n      <img (click)=\"detailsView(product._id)\" src=\"http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}\" alt=\"...\" class=\"img-responsive\">\r\n      <div class=\"caption\">\r\n        <p class=\"description\">{{ product.description }}</p>\r\n        <div class=\"clearfix\">\r\n          <div class=\"price pull-left\">${{ product.price }}</div>\r\n\r\n\r\n          <a (click)=\"cart(1,product._id,product)\" class=\"btn btn-success pull-right\" role=\"button\">Add to Shopping Cart</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n"
+module.exports = "<nav class=\"navbar navbar-inverse\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\"><i class=\"fab fa-rendact\"></i></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a  [routerLink]=\"['/']\">Home</a></li>\r\n      <!--<li><a href=\"#\">Page 2</a></li>-->\r\n\r\n\r\n\r\n\r\n      <form  class=\"navbar-form navbar-right\" action=\"/action_page.php\">\r\n        <div class=\"input-group\">\r\n          <!--<input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search\">-->\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search\" (keyup)=\"searchTerm$.next($event.target.value)\">\r\n\r\n          <div class=\"input-group-btn\">\r\n            <button class=\"btn btn-default\" type=\"submit\">\r\n              <i class=\"glyphicon glyphicon-search\"></i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n\r\n      </form>\r\n\r\n      <!--<li style=\"height: 35px\">-->\r\n      <!--<mat-form-field  (onSelect)=\"onChangeOption($event)\">-->\r\n      <!--<input style=\"background-color: white;height: 32px;border-radius: 3px\" type=\"text\" placeholder=\"Search\" aria-label=\"Number\" matInput [(ngModel)]=\"value\" [formControl]=\"myControl\" [matAutocomplete]=\"auto\">-->\r\n      <!--<mat-autocomplete #auto=\"matAutocomplete\">-->\r\n      <!--<mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">-->\r\n      <!--{{ option }}-->\r\n      <!--</mat-option>-->\r\n      <!--</mat-autocomplete>-->\r\n      <!--</mat-form-field>-->\r\n      <!--<button style=\"margin-bottom: 15px\" class=\"btn btn-primary\" (click)=\"onChangeOption($event)\">Search</button>-->\r\n      <!--</li>-->\r\n\r\n\r\n    </ul>\r\n\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n\r\n      <li *ngIf=\"isAdmin\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/dashboard']\"><span class=\"glyphicon glyphicon-user\"></span> Dashboard</a></li>\r\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/profile']\"><span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\r\n\r\n\r\n      <li *ngIf=\"isAdmin\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/product']\"><span class=\"glyphicon glyphicon-plus-sign\"></span>Add Product</a></li>\r\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/cart']\"><i class=\"glyphicon glyphicon-shopping-cart\"></i>\r\n\r\n        <span class=\"badge\">{{productService.getProductCartSize()||bad}}</span>\r\n\r\n      </a></li>\r\n\r\n\r\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/register']\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" ><a [routerLink]=\"['/login']\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\r\n      <li  *ngIf=\"authService.loggedIn()\" ><a (click)=\"onLogoutClick()\"  href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Logout</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<div *ngIf=\"!results\" class=\"row\">\r\n    <div *ngFor=\"let product of products;let i = index\" class=\"col-sm-6 col-md-4\">\r\n\r\n      <div  class=\"thumbnail\">\r\n        <h3 style=\"float: left\">{{product.code}}</h3>\r\n\r\n        <!--<h1 style=\"color: blue\">Asadul</h1>-->\r\n\r\n        <button (click)=\"delFunc(product)\" *ngIf=\"isAdmin\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-danger btn-sm\">\r\n          <span class=\"glyphicon glyphicon-trash\"></span> Trash\r\n        </button>\r\n\r\n        <button *ngIf=\"isAdmin\" (click)=\"editProduct(product._id)\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-primary btn-sm\">\r\n          <span class=\"glyphicon glyphicon-edit\"></span> Edit\r\n        </button>\r\n\r\n\r\n        <h3 (click)=\"detailsView(product._id)\" style=\"color: deepskyblue;text-align: center\">{{product.name}}</h3>\r\n\r\n        <img (click)=\"detailsView(product._id)\" src=\"http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}\" alt=\"...\" class=\"img-responsive\">\r\n        <div class=\"caption\">\r\n          <p class=\"description\">{{ product.description.length>40?   (product.description | slice:0:20 )+'.....': (product.description)}}\r\n\r\n\r\n            <a  (click)=\"detailsView(product._id)\" style=\"cursor:pointer;\" *ngIf=\"product.description.length>40\">More</a>\r\n\r\n\r\n          </p>\r\n          <div class=\"clearfix\">\r\n            <div class=\"price pull-left\">${{ product.price }}</div>\r\n\r\n\r\n            <a (click)=\"cart(1,product._id,product)\" class=\"btn btn-success pull-right\" role=\"button\"><i class=\"glyphicon glyphicon-shopping-cart\"></i>Add</a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n<div *ngIf=\"results\" class=\"row\">\r\n  <div *ngFor=\"let product of results;let i = index\" class=\"col-sm-6 col-md-4\">\r\n\r\n    <div  class=\"thumbnail\">\r\n      <h3 style=\"float: left\">{{product.code}}</h3>\r\n\r\n      <!--<h1 style=\"color: blue\">Asadul</h1>-->\r\n\r\n      <button (click)=\"delFunc(product)\" *ngIf=\"isAdmin\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-danger btn-sm\">\r\n        <span class=\"glyphicon glyphicon-trash\"></span> Trash\r\n      </button>\r\n\r\n      <button *ngIf=\"isAdmin\" (click)=\"editProduct(product._id)\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-primary btn-sm\">\r\n        <span class=\"glyphicon glyphicon-edit\"></span> Edit\r\n      </button>\r\n\r\n\r\n      <h3 (click)=\"detailsView(product._id)\" style=\"color: deepskyblue;text-align: center\">{{product.name}}</h3>\r\n\r\n      <img (click)=\"detailsView(product._id)\" src=\"http://app-a2062cdd-cd38-4cd4-86e2-48ea34537986.cleverapps.io/{{product.picture[0]}}\" alt=\"...\" class=\"img-responsive\">\r\n      <div class=\"caption\">\r\n        <p class=\"description\">{{ product.description }}</p>\r\n        <div class=\"clearfix\">\r\n          <div class=\"price pull-left\">${{ product.price }}</div>\r\n\r\n\r\n          <a (click)=\"cart(1,product._id,product)\" class=\"btn btn-success pull-right\" role=\"button\">Add to Shopping Cart</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -1409,6 +1530,7 @@ module.exports = "<app-navbar></app-navbar>\r\n\r\n<body class=\"text-center\">\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_product_service__ = __webpack_require__("./src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__ = __webpack_require__("./src/app/services/toaster.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1424,13 +1546,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(authService, flashMessage, router, productService, toasterService) {
+    function LoginComponent(authService, flashMessage, router, productService, toasterService, location) {
         this.authService = authService;
         this.flashMessage = flashMessage;
         this.router = router;
         this.productService = productService;
         this.toasterService = toasterService;
+        this.location = location;
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -1447,9 +1571,7 @@ var LoginComponent = /** @class */ (function () {
                 localStorage.setItem('isAdmin', res.data.isAdmin);
                 localStorage.setItem('loginId', res.data._id);
                 _this.authService.storeUserDatta(res.token, res.data);
-                // this.flashMessage.show('You are now Logged In!', { cssClass: 'alert-success' } );
-                console.log('Here lgoin');
-                // this.toasterService.Success("Successfully logged in!");
+                // this.location.back();
                 _this.toasterService.Success("Successfully Logged in!!");
                 _this.router.navigate(['/']);
             }
@@ -1471,7 +1593,8 @@ var LoginComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__services_product_service__["a" /* ProductService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__["a" /* ToasterServiceService */]])
+            __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__["a" /* ToasterServiceService */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_common__["Location"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -1626,7 +1749,7 @@ module.exports = "<br>\n<br>\n<br>\n<br>\n<br>\n\n<div class=\"container-fluid\"
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_file_service__ = __webpack_require__("./src/app/services/file.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_product_service__ = __webpack_require__("./src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_toaster_service__ = __webpack_require__("./src/app/services/toaster.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1646,21 +1769,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var uri = '/product';
+var uri = __WEBPACK_IMPORTED_MODULE_9__environments_environment__["a" /* environment */].baseUrl + "/product";
 var ur2;
 var PhotoUploadComponent = /** @class */ (function () {
     // http://localhost:4200/photo/5aca319a784c6127c01e3f48
-    function PhotoUploadComponent(_fileService, productService, route, router, toasterService) {
+    function PhotoUploadComponent(_fileService, productService, route, router) {
         var _this = this;
         this._fileService = _fileService;
         this.productService = productService;
         this.route = route;
         this.router = router;
-        this.toasterService = toasterService;
         this.attachmentList = [];
-        this.toasterService.Info("Now add Image!");
         var id = this.route.snapshot.paramMap.get('id');
-        ur2 = "/product/" + id;
+        ur2 = __WEBPACK_IMPORTED_MODULE_9__environments_environment__["a" /* environment */].baseUrl + "/product/" + id;
         console.log('Here ' + id + ' there');
         console.log(ur2);
         this.product = [];
@@ -1683,8 +1804,7 @@ var PhotoUploadComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__services_file_service__["a" /* FileService */],
             __WEBPACK_IMPORTED_MODULE_7__services_product_service__["a" /* ProductService */],
             __WEBPACK_IMPORTED_MODULE_8__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_8__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_9__services_toaster_service__["a" /* ToasterServiceService */]])
+            __WEBPACK_IMPORTED_MODULE_8__angular_router__["b" /* Router */]])
     ], PhotoUploadComponent);
     return PhotoUploadComponent;
 }());
@@ -1703,7 +1823,7 @@ module.exports = ""
 /***/ "./src/app/components/product/product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n\r\n<h2 class=\"page-header\" style=\"text-align: center\">Add Product</h2>\r\n\r\n<form (submit)=\"onRegisterSubmit()\" >\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Name</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Code</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"code\" name=\"code\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Picture</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"picture\" name=\"picture\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Description</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"textarea\" [(ngModel)]=\"description\" name=\"description\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Price</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Category</label>\r\n    <div class=\"col-sm-10\" >\r\n      <select type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\">\r\n\r\n        <option *ngFor=\"let cat of Category\" >{{cat.category}}</option>\r\n\r\n      </select>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Availability</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"avl\" name=\"avl\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\">-->\r\n  <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Submit</button>\r\n\r\n\r\n</form>\r\n"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n<h2 class=\"page-header\" style=\"text-align: center\">Add Product</h2>\r\n\r\n<form (submit)=\"onRegisterSubmit()\" >\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Name</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Code</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"code\" name=\"code\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Picture</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"picture\" name=\"picture\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Description</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"textarea\" [(ngModel)]=\"description\" name=\"description\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Price</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"price\" name=\"price\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Category</label>\r\n    <div class=\"col-sm-10\" >\r\n      <select type=\"text\" [(ngModel)]=\"category\" name=\"category\" class=\"form-control\">\r\n\r\n        <option *ngFor=\"let cat of Category\" >{{cat.category}}</option>\r\n\r\n      </select>\r\n      <br>\r\n      <button (click)=\"handleCategory()\" class=\"btn btn-info\">More Category</button>\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group row\">\r\n    <label class=\"col-sm-2 col-form-label\">Availability</label>\r\n    <div class=\"col-sm-10\">\r\n      <input type=\"text\" [(ngModel)]=\"avl\" name=\"avl\" class=\"form-control\">\r\n    </div>\r\n  </div>\r\n\r\n  <!--<input type=\"submit\" class=\"btn btn-primary\">-->\r\n  <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Submit</button>\r\n\r\n\r\n</form>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1770,9 +1890,13 @@ var ProductComponent = /** @class */ (function () {
                 _this.router.navigate(["/photo/" + id]);
             }
             else {
+                console.log('Error In product');
                 _this.router.navigate(['/product']);
             }
         });
+    };
+    ProductComponent.prototype.handleCategory = function () {
+        this.router.navigate(['category']);
     };
     ProductComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1880,7 +2004,7 @@ module.exports = ".panel-heading {\r\n  padding: 5px 15px;\r\n}\r\n\r\n.panel-fo
 /***/ "./src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n\r\n<!------ Include the above in your HEAD tag ---------->\r\n\r\n<form (submit)=\"onRegisterSubmit()\" class=\"form-horizontal\">\r\n  <fieldset>\r\n\r\n    <!-- Form Name -->\r\n    <legend style=\"text-align: center\">Register Yourself</legend>\r\n\r\n    <!-- Text input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"fname\">First Name</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"text\" [(ngModel)]=\"name\" name=\"first_name\" id=\"first_name\" class=\"form-control input-sm\" placeholder=\"First Name\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Text input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"lname\">User Name</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"text\" [(ngModel)]=\"username\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" placeholder=\"User Name\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Text input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"email\">Email</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" id=\"email\" class=\"form-control input-sm\" placeholder=\"Email Address\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Password input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"password\">Password</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" id=\"password\" class=\"form-control input-sm\" placeholder=\"Password\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"password\">Confirm Password</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"password\"  name=\"password_confirmation\" id=\"password_confirmation\" class=\"form-control input-sm\" placeholder=\"Confirm Password\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Button (Double) -->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"save\"></label>\r\n      <div class=\"col-md-8\">\r\n        <button id=\"save\" name=\"save\" class=\"btn btn-success\">Register</button>\r\n      </div>\r\n    </div>\r\n\r\n  </fieldset>\r\n</form>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--<div class=\"container\">-->\r\n  <!--<div class=\"row centered-form\">-->\r\n    <!--<div class=\"col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4\">-->\r\n      <!--<div class=\"panel panel-default\">-->\r\n        <!--<div class=\"panel-heading\">-->\r\n          <!--<h3 class=\"panel-title\">Register <small>It's free!</small></h3>-->\r\n        <!--</div>-->\r\n        <!--<div class=\"panel-body\">-->\r\n          <!--<form (submit)=\"onRegisterSubmit()\" role=\"form\">-->\r\n            <!--<div class=\"row\">-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"first_name\" id=\"first_name\" class=\"form-control input-sm\" placeholder=\"First Name\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"text\" [(ngModel)]=\"username\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" placeholder=\"User Name\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <!--<div class=\"form-group\">-->\r\n              <!--<input type=\"email\" [(ngModel)]=\"email\" name=\"email\" id=\"email\" class=\"form-control input-sm\" placeholder=\"Email Address\">-->\r\n            <!--</div>-->\r\n\r\n            <!--<div class=\"row\">-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"password\" [(ngModel)]=\"password\" name=\"password\" id=\"password\" class=\"form-control input-sm\" placeholder=\"Password\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"password\"  name=\"password_confirmation\" id=\"password_confirmation\" class=\"form-control input-sm\" placeholder=\"Confirm Password\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <!--<input type=\"submit\" value=\"Register\" class=\"btn btn-info btn-block\">-->\r\n\r\n          <!--</form>-->\r\n        <!--</div>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--<h2 class=\"page-header\">Register</h2>-->\r\n\r\n<!--<form (submit)=\"onRegisterSubmit()\" >-->\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Name</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Email</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n  <!--&lt;!&ndash;<div class=\"form-group\">&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<label>Email</label>&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">&ndash;&gt;-->\r\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">UserName</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n  <!--&lt;!&ndash;<div class=\"form-group\">&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<label>UserName</label>&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">&ndash;&gt;-->\r\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Password</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"password\" [(ngModel)]=\"password\" name=\"email\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n  <!--&lt;!&ndash;<input type=\"submit\" class=\"btn btn-primary\">&ndash;&gt;-->\r\n  <!--<button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Submit</button>-->\r\n\r\n\r\n<!--</form>-->\r\n"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n<!------ Include the above in your HEAD tag ---------->\r\n\r\n<form (submit)=\"onRegisterSubmit()\" class=\"form-horizontal\">\r\n  <fieldset>\r\n\r\n    <!-- Form Name -->\r\n    <legend style=\"text-align: center\">Register Yourself</legend>\r\n\r\n    <!-- Text input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"fname\">First Name</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"text\" [(ngModel)]=\"name\" name=\"first_name\" id=\"first_name\" class=\"form-control input-sm\" placeholder=\"First Name\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Text input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"lname\">User Name</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"text\" [(ngModel)]=\"username\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" placeholder=\"User Name\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Text input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"email\">Email</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" id=\"email\" class=\"form-control input-sm\" placeholder=\"Email Address\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Password input-->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"password\">Password</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" id=\"password\" class=\"form-control input-sm\" placeholder=\"Password\">\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"password\">Confirm Password</label>\r\n      <div class=\"col-md-4\">\r\n        <input type=\"password\"  name=\"password_confirmation\" id=\"password_confirmation\" class=\"form-control input-sm\" placeholder=\"Confirm Password\">\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Button (Double) -->\r\n    <div class=\"form-group\">\r\n      <label class=\"col-md-4 control-label\" for=\"save\"></label>\r\n      <div class=\"col-md-8\">\r\n        <button id=\"save\" name=\"save\" class=\"btn btn-success\">Register</button>\r\n      </div>\r\n    </div>\r\n\r\n  </fieldset>\r\n</form>\r\n\r\n</div>\r\n\r\n<!--<div class=\"container\">-->\r\n  <!--<div class=\"row centered-form\">-->\r\n    <!--<div class=\"col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4\">-->\r\n      <!--<div class=\"panel panel-default\">-->\r\n        <!--<div class=\"panel-heading\">-->\r\n          <!--<h3 class=\"panel-title\">Register <small>It's free!</small></h3>-->\r\n        <!--</div>-->\r\n        <!--<div class=\"panel-body\">-->\r\n          <!--<form (submit)=\"onRegisterSubmit()\" role=\"form\">-->\r\n            <!--<div class=\"row\">-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"first_name\" id=\"first_name\" class=\"form-control input-sm\" placeholder=\"First Name\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"text\" [(ngModel)]=\"username\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" placeholder=\"User Name\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <!--<div class=\"form-group\">-->\r\n              <!--<input type=\"email\" [(ngModel)]=\"email\" name=\"email\" id=\"email\" class=\"form-control input-sm\" placeholder=\"Email Address\">-->\r\n            <!--</div>-->\r\n\r\n            <!--<div class=\"row\">-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"password\" [(ngModel)]=\"password\" name=\"password\" id=\"password\" class=\"form-control input-sm\" placeholder=\"Password\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n              <!--<div class=\"col-xs-6 col-sm-6 col-md-6\">-->\r\n                <!--<div class=\"form-group\">-->\r\n                  <!--<input type=\"password\"  name=\"password_confirmation\" id=\"password_confirmation\" class=\"form-control input-sm\" placeholder=\"Confirm Password\">-->\r\n                <!--</div>-->\r\n              <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <!--<input type=\"submit\" value=\"Register\" class=\"btn btn-info btn-block\">-->\r\n\r\n          <!--</form>-->\r\n        <!--</div>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--<h2 class=\"page-header\">Register</h2>-->\r\n\r\n<!--<form (submit)=\"onRegisterSubmit()\" >-->\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Name</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Email</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n  <!--&lt;!&ndash;<div class=\"form-group\">&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<label>Email</label>&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">&ndash;&gt;-->\r\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">UserName</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n  <!--&lt;!&ndash;<div class=\"form-group\">&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<label>UserName</label>&ndash;&gt;-->\r\n    <!--&lt;!&ndash;<input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">&ndash;&gt;-->\r\n  <!--&lt;!&ndash;</div>&ndash;&gt;-->\r\n\r\n\r\n  <!--<div class=\"form-group row\">-->\r\n    <!--<label class=\"col-sm-2 col-form-label\">Password</label>-->\r\n    <!--<div class=\"col-sm-10\">-->\r\n      <!--<input type=\"password\" [(ngModel)]=\"password\" name=\"email\" class=\"form-control\">-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n\r\n  <!--&lt;!&ndash;<input type=\"submit\" class=\"btn btn-primary\">&ndash;&gt;-->\r\n  <!--<button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Submit</button>-->\r\n\r\n\r\n<!--</form>-->\r\n"
 
 /***/ }),
 
@@ -1895,6 +2019,7 @@ module.exports = "<app-navbar></app-navbar>\r\n\r\n<!------ Include the above in
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__ = __webpack_require__("./src/app/services/toaster.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1909,12 +2034,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(validateService, _flashMessagesService, authService, router) {
+    function RegisterComponent(validateService, _flashMessagesService, authService, router, toasterService) {
         this.validateService = validateService;
         this._flashMessagesService = _flashMessagesService;
         this.authService = authService;
         this.router = router;
+        this.toasterService = toasterService;
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
@@ -1932,23 +2059,27 @@ var RegisterComponent = /** @class */ (function () {
         if (!this.validateService.validateRegister(user)) {
             // this.flashMessages.show('Please fill in all fields',{cssClass: 'alert-danger',timeout:300});
             // this.flashMessage.warning('Please fill in all fields',{delay:2000});
-            this._flashMessagesService.show('Please fill in all fields!', { cssClass: 'alert-danger' });
+            // this._flashMessagesService.show('Please fill in all fields!', { cssClass: 'alert-danger' } );
+            this.toasterService.Warning("Please fill in all fields");
             return false;
         }
         //Validate Email
         if (!this.validateService.validateEmail(user.email)) {
             // this.flashMessages.show('Please use a valid email',{cssClass: 'alert-danger',timeout:300});
-            this._flashMessagesService.show('Please use valid Email!', { cssClass: 'alert-danger' });
+            // this._flashMessagesService.show('Please use valid Email!', { cssClass: 'alert-danger' } );
+            this.toasterService.Warning("Please use valid Email!");
             return false;
         }
         this.authService.registerUser(user)
             .subscribe(function (data) {
             if (data.success) {
-                _this._flashMessagesService.show('You are now Registered.', { cssClass: 'alert-success' });
+                // this._flashMessagesService.show('You are now Registered.', {cssClass: 'alert-success'});
+                _this.toasterService.Info("You are now Registered.");
                 _this.router.navigate(['/login']);
             }
             else {
-                _this._flashMessagesService.show('Something went wrong', { cssClass: 'alert-danger' });
+                // this._flashMessagesService.show('Something went wrong', { cssClass: 'alert-danger'});
+                _this.toasterService.Error("Something went wrong please try again!");
                 _this.router.navigate(['/register']);
             }
         });
@@ -1962,7 +2093,8 @@ var RegisterComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
             __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_5__services_toaster_service__["a" /* ToasterServiceService */]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -2199,6 +2331,70 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/category.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CategoryService = /** @class */ (function () {
+    function CategoryService(http) {
+        this.http = http;
+    }
+    CategoryService.prototype.getCategory = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl + "/category", { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CategoryService.prototype.deleteCategory = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        console.log('In delete category');
+        console.log('Category ID: ' + id);
+        headers.append('authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.delete(__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl + "/category/" + id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CategoryService.prototype.addCategory = function (data) {
+        // console.log(category);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl + "/category", data, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CategoryService.prototype.loadToken = function () {
+        var token = localStorage.getItem('id_token');
+        this.authToken = token;
+    };
+    CategoryService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
+    ], CategoryService);
+    return CategoryService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/file.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2263,7 +2459,7 @@ var ProductService = /** @class */ (function () {
     ProductService.prototype.registerProduct = function (product) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.post('/product', product, { headers: headers })
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].baseUrl + "/product", product, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     ProductService.prototype.getProduct = function () {

@@ -9,10 +9,10 @@ import 'rxjs/add/observable/throw';
 import { FileService } from '../../services/file.service';
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute, Router} from '@angular/router';
-import { ToasterServiceService} from "../../services/toaster.service";
+import {environment} from "../../../environments/environment";
 
 
-const uri = '/product';
+const uri = `${environment.baseUrl}/product`;
 
 let ur2;
 
@@ -42,16 +42,13 @@ export class PhotoUploadComponent implements OnInit {
     private _fileService:FileService,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router,
-    private toasterService: ToasterServiceService
+    private router: Router
 
   ){
 
 
-    this.toasterService.Info("Now add Image!");
-
     const id = this.route.snapshot.paramMap.get('id');
-    ur2 = `/product/${id}`;
+    ur2 = `${environment.baseUrl}/product/${id}`;
     console.log('Here '+id+' there');
     console.log(ur2);
     this.product = [];

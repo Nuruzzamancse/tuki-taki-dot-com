@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bf5f021c-4596-4383-a648-9be9c658b917" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/environments/environment.ts" afterPath="$PROJECT_DIR$/front-end/src/environments/environment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="134" column="65" lean-forward="false" selection-start-line="134" selection-start-column="65" selection-end-line="134" selection-end-column="65" />
+            <state relative-caret-position="178">
+              <caret line="132" column="12" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -81,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="82" lean-forward="true" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+              <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -188,8 +189,8 @@
         <option value="$PROJECT_DIR$/front-end/src/app/components/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/details/details.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/home/home.component.html" />
-        <option value="$PROJECT_DIR$/front-end/src/environments/environment.ts" />
         <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/front-end/src/environments/environment.ts" />
       </list>
     </option>
   </component>
@@ -303,11 +304,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="rideZoneClone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rideZoneClone" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -382,12 +378,12 @@
       <workItem from="1527704315061" duration="750000" />
       <workItem from="1528512341632" duration="160000" />
       <workItem from="1528512574961" duration="14259000" />
-      <workItem from="1528531361001" duration="12390000" />
+      <workItem from="1528531361001" duration="13376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277712000" />
+    <option name="totallyTimeSpent" value="278698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -834,14 +830,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="134" column="65" lean-forward="false" selection-start-line="134" selection-start-column="65" selection-end-line="134" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -855,11 +848,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="82" lean-forward="true" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
-          <folding />
+        <state relative-caret-position="178">
+          <caret line="132" column="12" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

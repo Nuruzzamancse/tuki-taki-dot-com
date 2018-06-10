@@ -2,7 +2,7 @@
 
 ## This is an E-commerce site. Made in Node.js, Express, Angular and MongoDB.Here Stripe has been used for payment.
 
-1.System have product table containing product code, product name, description, no. of available product in 
+1. System have product table containing product code, product name, description, no. of available product in 
   stock, price and photo.
 
 2. Visitor can see the product list with product picture and can add/remove products to/from his shopping cart.
@@ -16,13 +16,13 @@
 6. A search option for products has benn included in the system
 
 ### System has an admin panel & admin can
-   1.Add new product, delete or modify existing product information
+   1. Add new product, delete or modify existing product information
    
-   2.See Stock status for each product
+   2. See Stock status for each product
    
-   3.See the customer wise product buying list and product list that are waiting for shipment.
+   3. See the customer wise product buying list and product list that are waiting for shipment.
    
-   4.Can Delete User
+   4. Can Delete User
    
    #### Admin Email:one@gmail.com
    

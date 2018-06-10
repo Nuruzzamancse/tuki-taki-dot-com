@@ -15,10 +15,10 @@
 
 6. A search option for products has benn included in the system
 
-⋅⋅*System has an admin panel & admin can
-⋅⋅1. Add new product, delete or modify existing product information
-⋅⋅2. See Stock status for each product
-⋅⋅3. See the customer wise product buying list and product list that are waiting for shipment.
-⋅⋅4. Can Delete User
-⋅⋅5. Admin Email:one@gmail.com
-⋅⋅6. Admin Pass:123456
+### System has an admin panel & admin can
+   1.Add new product, delete or modify existing product information
+   2.See Stock status for each product
+   3.See the customer wise product buying list and product list that are waiting for shipment.
+   4.Can Delete User
+   5.Admin Email:one@gmail.com
+   6.Admin Pass:123456

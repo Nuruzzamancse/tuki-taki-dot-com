@@ -15,7 +15,7 @@
 
 6. A search option for products has benn included in the system
 
-⋅⋅* System has an admin panel & admin can
+⋅⋅*System has an admin panel & admin can
 ⋅⋅1. Add new product, delete or modify existing product information
 ⋅⋅2. See Stock status for each product
 ⋅⋅3. See the customer wise product buying list and product list that are waiting for shipment.
